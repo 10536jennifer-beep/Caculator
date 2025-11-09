@@ -150,7 +150,7 @@ namespace Caculator
                     finalResults = firstNumber / secondNumber;
                     break;
             }
-            txtNumber.Text = finalResults.ToString();
+            txtNumber.Text = Convert.ToString(finalResults);
         }
 
         private void btnDot_Click(object sender, EventArgs e)
