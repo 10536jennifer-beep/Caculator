@@ -19,7 +19,7 @@ namespace Caculator
 
         float firstNumber, secondNumber;
         int operators = -1;
-        private void btnOne_Click(object sender, EventArgs e)
+        private void btnOne_Click(object sender, EventArgs e) //輸入數字1
         {
             if (txtNumber.Text == "0")
             {
@@ -28,7 +28,7 @@ namespace Caculator
             txtNumber.Text = txtNumber.Text + "1";
         }
 
-        private void btnTwo_Click(object sender, EventArgs e)
+        private void btnTwo_Click(object sender, EventArgs e) //輸入數字2
         {
             if (txtNumber.Text == "0")
             {
@@ -37,7 +37,7 @@ namespace Caculator
             txtNumber.Text = txtNumber.Text + "2";
         }
 
-        private void btnThree_Click(object sender, EventArgs e)
+        private void btnThree_Click(object sender, EventArgs e) //輸入數字3
         {
             if (txtNumber.Text == "0")
             {
@@ -46,7 +46,7 @@ namespace Caculator
             txtNumber.Text = txtNumber.Text + "3";
         }
 
-        private void btnFour_Click(object sender, EventArgs e)
+        private void btnFour_Click(object sender, EventArgs e) //輸入數字4
         {
             if (txtNumber.Text == "0")
             {
@@ -55,7 +55,7 @@ namespace Caculator
             txtNumber.Text = txtNumber.Text + "4";
         }
 
-        private void btnFive_Click(object sender, EventArgs e)
+        private void btnFive_Click(object sender, EventArgs e)//輸入數字5
         {
             if (txtNumber.Text == "0")
             {
@@ -64,7 +64,7 @@ namespace Caculator
             txtNumber.Text = txtNumber.Text + "5";
         }
 
-        private void btnSix_Click(object sender, EventArgs e)
+        private void btnSix_Click(object sender, EventArgs e) //輸入數字6
         {
             if (txtNumber.Text == "0")
             {
@@ -73,7 +73,7 @@ namespace Caculator
             txtNumber.Text = txtNumber.Text + "6";
         }
 
-        private void btnSeven_Click(object sender, EventArgs e)
+        private void btnSeven_Click(object sender, EventArgs e) //輸入數字7
         {
             if (txtNumber.Text == "0")
             {
@@ -82,7 +82,7 @@ namespace Caculator
             txtNumber.Text = txtNumber.Text + "7";
         }
 
-        private void btnEight_Click(object sender, EventArgs e)
+        private void btnEight_Click(object sender, EventArgs e) //輸入數字8
         {
             if (txtNumber.Text == "0")
             {
@@ -91,7 +91,7 @@ namespace Caculator
             txtNumber.Text = txtNumber.Text + "8";
         }
 
-        private void btnNine_Click(object sender, EventArgs e)
+        private void btnNine_Click(object sender, EventArgs e) //輸入數字9
         {
             if (txtNumber.Text == "0")
             {
@@ -100,7 +100,7 @@ namespace Caculator
             txtNumber.Text = txtNumber.Text + "9";
         }
 
-        private void btnZero_Click(object sender, EventArgs e)
+        private void btnZero_Click(object sender, EventArgs e) //輸入數字0
         {
             if (txtNumber.Text == "0")
             {
@@ -109,28 +109,42 @@ namespace Caculator
             txtNumber.Text = txtNumber.Text + "0";
         }
 
-        private void btnMinus_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e) //加工能
+        {
+            firstNumber = Convert.ToSingle(txtNumber.Text);
+            txtNumber.Text = "0";
+            operators = 0;
+        }
+
+        private void btnMinus_Click(object sender, EventArgs e) //減功能
         {
             firstNumber = Convert.ToSingle(txtNumber.Text);
             txtNumber.Text = "0";
             operators = 1;
         }
 
-        private void btnPlus_Click(object sender, EventArgs e)
+        private void btnPlus_Click(object sender, EventArgs e) //乘功能
         {
             firstNumber = Convert.ToSingle(txtNumber.Text);
             txtNumber.Text = "0";
             operators = 2;
         }
 
-        private void btnDivide_Click(object sender, EventArgs e)
+        private void btnDivide_Click(object sender, EventArgs e) //除功能
         {
             firstNumber = Convert.ToSingle(txtNumber.Text);
             txtNumber.Text = "0";
             operators = 3;
         }
+        private void btnDot_Click(object sender, EventArgs e) //小數點功能
+        {
+            if (txtNumber.Text.IndexOf(".") == -1)
+            {
+                txtNumber.Text = txtNumber.Text + ".";
+            }
+        }
 
-        private void btnEqual_Click(object sender, EventArgs e)
+        private void btnEqual_Click(object sender, EventArgs e) //等於功能
         {
             float finalResults = 0f;
             secondNumber = Convert.ToSingle(txtNumber.Text);
@@ -153,15 +167,7 @@ namespace Caculator
             txtNumber.Text = Convert.ToString(finalResults);
         }
 
-        private void btnDot_Click(object sender, EventArgs e)
-        {
-            if(txtNumber.Text.IndexOf(".") == -1)
-            {
-                txtNumber.Text = txtNumber.Text + ".";
-            }
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e) //AC功能
         {
             txtNumber.Text = "0";
             firstNumber = 0f;
@@ -169,11 +175,6 @@ namespace Caculator
             operators = -1;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            firstNumber = Convert.ToSingle(txtNumber.Text);
-            txtNumber.Text = "0";
-            operators = 0;
-        }
+        
     }
 }
